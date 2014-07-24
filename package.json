@@ -1,5 +1,6 @@
 {
   "name": "grunt-test",
+  "main_file" : "app",
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "^0.4.5",
