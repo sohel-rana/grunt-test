@@ -7,24 +7,34 @@
 
 
 module.exports = function(grunt){
-
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
+        concat: {
+            dist : {
+                src : ['src/*.js'],
+                dest : 'build/temp.js'
+            }
+        },
         uglify : {
             options : {
                 banner: '/* <%= pkg.name %>, Generated on : <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build : {
-                src : 'src/<%=pkg.main_file%>.js',
-                dest: 'build/<%=pkg.main_file%>.js'
+                src : 'build/temp.js',
+                dest : 'build/<%=pkg.main_file%>.js'
             }
         }
     });
 
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify']);
+
+    grunt.registerTask('someCustomTask', "Some Custom Task", function(){
+        grunt.log.write('Some custom task created');
+    });
+    grunt.registerTask('default', ['concat','uglify','someCustomTask']);
 
 };
