@@ -11,8 +11,8 @@ module.exports = function(grunt){
         pkg : grunt.file.readJSON('package.json'),
         concat: {
             dist : {
-                src : ['src/*.js'],
-                dest : 'build/temp.js'
+                src : ['src/**/*.js'],
+                dest : '.tmp/app.js'
             }
         },
         uglify : {
@@ -20,7 +20,7 @@ module.exports = function(grunt){
                 banner: '/* <%= pkg.name %>, Generated on : <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build : {
-                src : 'build/temp.js',
+                src : '.tmp/app.js',
                 dest : 'build/<%=pkg.main_file%>.js'
             }
         }
