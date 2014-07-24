@@ -21,7 +21,7 @@ module.exports = function(grunt){
             },
             build : {
                 src : '.tmp/app.js',
-                dest : 'build/<%=pkg.main_file%>.js'
+                dest : 'build/<%=pkg.main_file%>.min.js'
             }
         }
     });
