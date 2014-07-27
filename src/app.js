@@ -1,10 +1,4 @@
-/**
-
- * User: Sohel
- * Date: 7/24/14
- * Time: 5:31 PM
- */
-
+//might look insane, but does that matter really ;)
 (function(){
     console.log('Hello world');
 })();
