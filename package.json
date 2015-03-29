@@ -17,6 +17,8 @@
   },
   "keywords": [
     "grunt",
+    "javascript",
+    "task runner",
     "grunt-test-project"
   ],
   "author": "Sohel Rana",
